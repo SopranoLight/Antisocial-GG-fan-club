@@ -9,6 +9,9 @@ body, h1, h2, h3, h4, p, ul{
     margin: 0;
     padding: 0;
 } 
+body{
+  height: 100%;
+}
 
 ul{
     list-style: none;
@@ -330,10 +333,27 @@ color: #ffffff;
     /*This part is important for centering*/
     display: grid;
     place-items: center;
+    margin-bottom: 60px;
+  }
+  .wrep{
+    margin: 0;
   }
   
   .typing-demo {
     width: 18ch;
+    animation: typing 4s steps(50), blink .5s step-end infinite alternate;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    font-family: monospace;
+    /* font-size: 2em; */
+    font-style: normal;
+    font-weight: 400;
+    font-size: 62px;
+    line-height: 75px;
+  }
+  .typing-demot{
+    width: 19ch;
     animation: typing 4s steps(50), blink .5s step-end infinite alternate;
     white-space: nowrap;
     overflow: hidden;
@@ -490,14 +510,286 @@ color: #ffffff;
 
 
 
+/* section antisocial start */
+.antisocial{
+  width: 100%;
+  
+  overflow: hidden; 
+  background: #22222A;
+  font-family: 'Fira Mono', monospace;
+  -webkit-font-smoothing: antialiased;
+  font-size: .88rem;
+  color: #bdbdd5;
+}  
+
+.content-width {
+  width: 86%;
+  height: 100vh;
+  margin: 0 auto;
+}
+
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.slideshow-items {
+  position: relative;
+  width: 100%;
+  height: 300px;
+}
+
+.item {
+  position: absolute;
+  width: 100%;
+  height: auto;
+}
+
+.item-image-container {
+  position: relative;
+  width: 42%;
+}
+
+.item-image-container::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: 0;
+  width: 101%;
+  height: 101%;
+  background: #22222A;
+  opacity: 0;
+  z-index: 1;
+}
+
+.item-image {
+  position: relative;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  display: block;
+  /* transition: property name | duration | timing-function | delay  */
+  transition: opacity .3s ease-out .45s;
+}
+
+.item.active .item-image {
+  opacity: 1;
+}
+
+.item.active .item-image-container::before {
+  opacity: .8;
+}
+
+.item-description {
+  position: absolute;
+  top: 182px;
+  right: 0;
+  width: 50%;
+  padding-right: 4%;
+  line-height: 1.8;
+}
+
+/* Staggered Vertical Items ------------------------------------------------------*/
+.item-header {
+  position: absolute;
+  top: 150px;
+  left: -1.8%;
+  z-index: 100;
+}
+
+.item-header .vertical-part {
+  margin: 0 -4px;
+  font-family: 'Montserrat', sans-serif;
+  -webkit-font-smoothing: auto;
+  font-size: 7vw;
+  color: #fff;
+}
+
+.vertical-part {
+  overflow: hidden;
+  display: inline-block;
+}
+
+.vertical-part b {
+  display: inline-block;
+  transform: translateY(100%);
+}
+
+.item-header .vertical-part b {
+  transition: .5s;
+}
+
+.item-description .vertical-part b {
+  transition: .21s;
+}
+
+.item.active .item-header .vertical-part b {
+  transform: translateY(0);
+}
+
+.item.active .item-description .vertical-part b {
+  transform: translateY(0);
+}
+
+/* Controls ----------------------------------------------------------------------*/
+.controls {
+  position: relative;
+  text-align: right;
+  z-index: 1000;
+}
+
+.controls ul {
+  list-style: none;
+}
+
+.controls ul li {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 3px;
+  background:#bdbdd5;;
+  cursor: pointer;
+}
+
+.controls ul li.active {
+  background:#6a6a77;;
+}
+
+
+/* section antisocial end */
+
+
+@keyframes wave {
+  from, to {
+    transform: translate(-50%, 0%);
+  }
+  
+  50% {
+    transform: translate(-50%, -20%);
+  }
+}
 
 
 
+#bubble-wrapper {
+  height: 100%;
+  width: 100%;
+  
+  position: fixed;
+  bottom: 0px;
+  
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.bubble {
+  height: max(300px, 30vw);
+  width: max(300px, 30vw);
+  
+  background-color: #000000;  
+  border-radius: 100%;
+  
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  
+  animation: wave 2s ease-in-out infinite;
+}
+
+@media(prefers-reduced-motion) {
+  .bubble {
+    animation: none;
+    display: none;
+  }
+}
+
+/* -- Footer styles -- */
 
 
 
+#footer {
+  border-top: 1px solid rgba(255, 255, 255, 0.25);
+  bottom: 0px;
+  position: relative;
+  
+  width: 100%;
+}
 
+#footer-content {
+  padding: 8rem 16rem;
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
 
+.footer-section {  
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-section-title {
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+}
+
+.footer-section-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 160px;
+}
+
+.footer-section-links > a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.footer-section-links > a:hover {
+  text-decoration: underline;
+}
+
+@media(max-width: 900px) {
+  #footer-content {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 4rem;
+  }
+  
+  .footer-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  
+  .footer-section-title {    
+    flex-shrink: 0;
+    width: 120px;
+  }
+}
+
+@media(max-width: 600px) {
+  #footer {
+    position: relative;  
+    margin-top: 90vh;
+  }
+  
+  #footer-content {
+    padding: 2rem;
+  }
+  
+  .footer-section-title {    
+    font-size: 1rem;
+  }
+  
+  .footer-section-links > a {
+    font-size: 0.8rem;
+  }
+}
 
 
 
