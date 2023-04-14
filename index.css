@@ -971,6 +971,26 @@ color: #ffffff;
   }
 }
 @media(max-width: 425px) {
+  .perspective-text{
+    transform: translate(-70%, -50%)
+  }
+.society__article{
+  flex-direction: column-reverse;
+}
+.order{
+  order: 1 2;
+}
+.order_1{
+  order: 0;
+}
+.society__all-info{
+  width: 100%;
+}
+
+.gellery__info{
+  gap: 10px;
+}
+
 .nav{
   display: none;
 }
@@ -982,12 +1002,12 @@ color: #ffffff;
   font-size: 14px;
 }
 .society__foto{
-  padding: 0 10px;
+  padding: 10px 10px;
   width: 200px;
   height: 200px;
 }
 .society__gif{
-  padding: 0 10px;
+  padding: 10px 10px;
   width: 200px;
   height: 200px;
 }
