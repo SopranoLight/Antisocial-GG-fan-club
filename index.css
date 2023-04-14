@@ -1,5 +1,5 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap'); */
-
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700&family=Space+Mono:wght@400;700&display=swap');
 
 *, ::after, ::before{
 box-sizing: border-box;
@@ -21,7 +21,7 @@ a{
     text-decoration: none;
 }
 .title{
-font-family: 'Space Mono';
+
 font-style: normal;
 font-weight: 700;
 font-size: 3.875rem;
@@ -29,7 +29,7 @@ line-height: 4.5rem;
 color: #000000;
 }
 .paragraf{
-font-family: 'Space Mono';
+
 font-style: normal;
 font-weight: 400;
 font-size: 1.5rem;
@@ -58,7 +58,7 @@ color: #000000;
   border: none;
   cursor: pointer;
   background: none;
-  font-family: 'Space Mono';
+ 
   font-style: normal;
   font-weight: 400;
   font-size: 1.625rem;
@@ -73,7 +73,7 @@ color: #000000;
     width: 100px;
 }
 .link{
- font-family: 'Space Mono';
+
 font-style: normal;
 font-weight: 400;
 font-size: 1.625rem;
@@ -133,7 +133,7 @@ transition: opacity 0.5s ease-in-out;
  margin-bottom: 40px;
 }
 .main__paragraf{
-    margin-bottom: 120px;
+    margin-bottom: 80px;
 }
 .main__btn{
     font-family: 'Space Mono';
@@ -443,6 +443,8 @@ color: #ffffff;
    }
    .society__paragraf{
     text-align: center;
+    font-family: 'Space Mono', monospace;
+
    }
    .society__gif{
     border-radius: 100px;
@@ -679,7 +681,7 @@ color: #ffffff;
 }
 
 .gellery__paragraf{
-  font-family: 'Space Mono';
+  font-family: 'Maven Pro', sans-serif;
   font-style: normal;
   font-weight: 400;
   font-size: 1.625rem;
